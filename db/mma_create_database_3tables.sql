@@ -50,7 +50,8 @@ INSERT INTO LineItem VALUES
 (2, 1, 5, 10);
 
 -- create a user and grant privileges to that user
+create user if not exists 'mma_user'@'localhost'
+IDENTIFIED BY 'sesame';
 GRANT SELECT, INSERT, DELETE, UPDATE
 ON mma.*
-TO mma_user@localhost
-IDENTIFIED BY 'sesame';
+TO mma_user@localhost;
